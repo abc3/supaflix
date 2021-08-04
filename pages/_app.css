@@ -1,0 +1,27 @@
+@import "~antd/dist/antd.css";
+
+#components-layout-demo-side .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+  /* background: #fff;
+  border: solid 1px; */
+}
+
+#component-login .login-form {
+  max-width: 600px;
+  min-width: 300px;
+  margin-top: 20%;
+}
+#component-login .login-form-forgot {
+  float: right;
+}
+#component-login .ant-col-rtl .login-form-forgot {
+  float: left;
+}
+#component-login .login-form-button {
+  width: 100%;
+}
