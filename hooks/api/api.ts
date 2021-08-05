@@ -1,7 +1,7 @@
 import {
   Errors,
   Fetcher,
-  ChartPointsResponse
+  ItemsResponse
 } from "./h";
 import { getItem } from "../../lib/cookie";
 
@@ -47,12 +47,8 @@ export class SupaflixApi {
     }
   }
 
-  getErrorsChart() {
-    return this.f.get<ChartPointsResponse>(`${this.apiBase}errors_chart`);
-  }
-
-  getViewsChart(timeframe: string) {
-    return this.f.get<ChartPointsResponse>(`${this.apiBase}views?period=` + timeframe);
+  getItems() {
+    return this.f.get<ItemsResponse>(`${this.apiBase}items`);
   }
 
 }
