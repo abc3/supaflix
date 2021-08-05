@@ -1,7 +1,14 @@
-import React, { useEffect } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import Page from '../layouts/Page'
-import { Card, Row, Divider, PageHeader } from 'antd'
-// import { Button } from '@supabase/ui'
+import { Card, Row, Col, Divider, PageHeader } from 'antd'
+import videojsqualityselector from 'videojs-hls-quality-selector'
+import 'videojs-contrib-quality-levels'
+import dynamic from 'next/dynamic'
+
+const VideoPlayer = dynamic(
+  // @ts-ignore
+  () => import('react-video-js-player'), { ssr: false }
+)
 
 const PlayerPage: React.FC = (props) => {
 
@@ -25,10 +32,17 @@ const PlayerPage: React.FC = (props) => {
     >
 
       <Row>
-        {/* return <Button>I am a Supabase UI button</Button> */}
+        <Col >
+          <VideoPlayer
+            // @ts-ignore
+            bigPlayButton={true}
+            controls={true}
+            src={'https://didkyjgwsjjjadhqgwqr.supabase.in/storage/v1/object/public/media/items/1/playlist.m3u8'}
+            width="720"
+            height="420"
+          />
+        </Col>
       </Row>
-
-      <Divider />
 
     </Card>
   </Page>)

@@ -22,20 +22,24 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-redux": "^7.2.1",
+    "react-video-js-player": "^1.1.1",
     "react-virtualized-auto-sizer": "^1.0.2",
     "react-window": "^1.8.5",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^1.2.1",
     "shaka-player": "^3.0.10",
-    "swr": "^0.5.4"
+    "swr": "^0.5.4",
+    "videojs-hls-quality-selector": "^1.1.4"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",
-    "@types/node": "^13.13.5",
-    "@types/react": "^16.9.35",
+    "@types/node": "^16.4.12",
+    "@types/react": "^17.0.15",
     "@types/react-redux": "^7.1.9",
     "@types/react-virtualized-auto-sizer": "^1.0.0",
     "@types/react-window": "^1.8.2",
+    "@types/video.js": "^7.3.26",
+    "@types/videojs-hls-quality-selector": "^1.1.0",
     "typescript": "^3.9.7"
   }
 }
