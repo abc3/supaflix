@@ -1,9 +1,11 @@
 import {
   Errors,
   Fetcher,
-  ItemsResponse
+  ItemsResponse,
+  ItemResponse
 } from "./h";
 import { getItem } from "../../lib/cookie";
+import { StringGradients } from "antd/lib/progress/progress";
 
 
 export interface SupaflixApiParams {
@@ -49,6 +51,10 @@ export class SupaflixApi {
 
   getItems() {
     return this.f.get<ItemsResponse>(`${this.apiBase}items`);
+  }
+
+  getItem(id: string | string[]) {
+    return this.f.get<ItemResponse>(`${this.apiBase}items?id=${id}`)
   }
 
 }

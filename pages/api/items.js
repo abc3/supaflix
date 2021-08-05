@@ -13,16 +13,40 @@ function preloadPublicUrl(id) {
   return publicURL
 }
 
+function mediaPublicUrl(id) {
+  const { publicURL } = supabase
+    .storage
+    .from('media')
+    .getPublicUrl(`items/${id}/playlist.m3u8`)
+  return publicURL
+}
+
 export default async (req, res) => {
   let response = {}
   switch (req.method) {
     case 'GET':
-      const { data } = await supabase.from('items').select()
-      response = {
-        items: data.map(el => {
-          el.preload = preloadPublicUrl(el.id)
-          return el
-        })
+      if (req.query?.id) {
+        const { data } = await supabase.from('items')
+          .select()
+          .eq('id', req.query.id)
+        if (data.length == 1) {
+          const id = req.query?.id
+          data[0].preload   = preloadPublicUrl(id)
+          data[0].media_url = mediaPublicUrl(id)
+          response = {
+            item: data[0]
+          }
+        } else {
+          response = { isError: true }
+        }
+      } else {
+        const { data } = await supabase.from('items').select()
+        response = {
+          items: data.map(el => {
+            el.preload = preloadPublicUrl(el.id)
+            return el
+          })
+        }
       }
       break;
     case 'POST':

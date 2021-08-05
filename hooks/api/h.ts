@@ -38,11 +38,16 @@ export interface ItemsResponse {
   items: Item[]
 }
 
+export interface ItemResponse {
+  item: Item
+}
+
 export interface Item {
   created: string,
   description: string,
   duration: number,
   id: number,
+  media_url?: string,
   preload: string,
   title: string
 }
