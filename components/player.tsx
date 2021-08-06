@@ -17,7 +17,7 @@ const Player: React.FC<{ id: string | string[]}> = (props) => {
   const data = useSupaflixApi([`${id}`], (id) => supaflixApi.getItem(id))
   useEffect(() => {
     if (!data.isError)
-    setItem(data.value.item)
+      setItem(data.value.item)
   }, [data])
 
   let player = <></>
