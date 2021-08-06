@@ -4,7 +4,7 @@ import React from "react";
 const defaultDescription = "Full-featured template for next.js applications.";
 const defaultOGURL = process.env.appUrl || "";
 const defaultOGImage = defaultOGURL + "/static/og-image.png";
-const defaultTitle = process.env.appTitle || "app title";
+const defaultTitle = process.env.appTitle || "Supaflix - video gallery over Supabase";
 
 const Head: React.FC = (props) => (
   <NextHead>

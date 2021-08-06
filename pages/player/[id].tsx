@@ -11,7 +11,7 @@ const PlayerPage: React.FC = (props) => {
   const router = useRouter()
   const { id } = router.query
 
-  let comp = <Spin tip="Loading..." />
+  let comp = <Spin style={{ marginTop: 30 }} tip="Loading..." />
   if (id) {
     comp = <Player id={id} />
   }

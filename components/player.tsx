@@ -58,7 +58,7 @@ const Player: React.FC<{ id: string | string[]}> = (props) => {
       >
 
         <Row>
-          <Col >
+          <Col style={{ paddingLeft: 170 }}>
             {player}
           </Col>
         </Row>
