@@ -1,4 +1,4 @@
-# Supaflex, video gallery hosted on Supabase
+# Supaflix, video gallery hosted on Supabase
 
 ### The project uses Supabase storage as CDN for HLS streaming
 <img width="986" alt="Screenshot 2021-08-06 at 18 03 55" src="https://user-images.githubusercontent.com/1172600/128539224-c733972e-9c28-424f-9b4e-f50f04b694fb.png">
