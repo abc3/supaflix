@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card, Spin } from "antd";
 const { Meta } = Card;
 import { Item } from '../hooks/api/h'
+import Link from 'next/link'
 
 const ItemsList: React.FC<{ items: Item[] }> = ({ items }) => {
   const [itemsList, setItems] = useState<Item[]>([])
@@ -15,15 +16,16 @@ const ItemsList: React.FC<{ items: Item[] }> = ({ items }) => {
   return (
     <>{itemsList.map(el => {
       return (
-        <a href={`/player/${el.id}`} key={el.id}>
+        <Link href={`/player/${el.id}`}>
           <Card
+            key={el.id}
             hoverable
             style={{ width: 240, margin: '12px 12px 0 0' }}
             cover={<img src={el.preload} />}
           >
             <Meta title={el.title} description={el.description} />
           </Card>
-        </a>
+        </Link>
       )
     })}</>
   )
