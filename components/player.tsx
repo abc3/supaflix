@@ -5,6 +5,7 @@ import { Item } from '../hooks/api/h'
 import { supaflixApi, useSupaflixApi } from "../hooks/api"
 import dynamic from 'next/dynamic'
 import 'videojs-contrib-quality-levels'
+import { useRouter } from "next/router";
 
 const VideoPlayer = dynamic(
   // @ts-ignore
@@ -15,6 +16,8 @@ const Player: React.FC<{ id: string | string[]}> = (props) => {
   const { id } = props
   const [item, setItem] = useState<Item>()
   const data = useSupaflixApi([`${id}`], (id) => supaflixApi.getItem(id))
+  const router = useRouter()
+
   useEffect(() => {
     if (!data.isError)
       setItem(data.value.item)
@@ -38,7 +41,11 @@ const Player: React.FC<{ id: string | string[]}> = (props) => {
       <PageHeader
         title={item?.title}
         subTitle={item?.description}
-        onBack={() => { location.href = '/' }}
+        onBack={() => {
+          router
+            .push("/index", `/`)
+            .then(() => window.scrollTo(0, 0))
+        }}
       />
 
 

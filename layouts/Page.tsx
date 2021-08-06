@@ -1,18 +1,6 @@
 import React from "react";
 import Head from "./Head";
 import { Layout, Menu, Breadcrumb, Avatar, Dropdown } from 'antd';
-import {
-  PlaySquareOutlined,
-  WarningOutlined,
-  DashboardOutlined,
-  HistoryOutlined,
-  SelectOutlined,
-  VideoCameraAddOutlined,
-  UserOutlined,
-  SettingOutlined,
-  AppstoreOutlined,
-  LoginOutlined
-} from '@ant-design/icons';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState, useEffect } from "react";
@@ -52,9 +40,11 @@ const Page: React.FC = (props) => {
 
     <Layout className="site-layout">
       <Header style={{ padding: 0, backgroundColor: '#fff' }}>
-          <a style={{ marginLeft: 30, textAlign: 'left', color: '#e50914', fontSize: 24, fontWeight: 'bold'}} href="/">
+          <Link as={`/`} href={"/index"}>
+          <a style={{ marginLeft: 30, textAlign: 'left', color: '#e50914', fontSize: 24, fontWeight: 'bold'}}>
             Supaflix
           </a>
+          </Link>
       </Header>
       <Content style={{ margin: '0 16px' }}>
         <div className="site-layout-background" style={{ padding: 12, paddingTop: 0, minHeight: 360, maxWidth: 1200 }}>
